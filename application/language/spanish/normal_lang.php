@@ -1,0 +1,83 @@
+<?php
+$lang['lista.dependencias'] = "Listado de Dependencias Registradas";
+$lang['agregar.dependencia'] = "Agregar Nueva Dependencia";
+$lang['dependencia'] = "Dependencia";
+$lang['detalle'] = "Detalle";
+$lang['estado'] = "Estado";
+$lang['tipo'] = "Tipo";
+$lang['registro.dependencia'] = "Registro de Dependencia realizado con éxito";
+
+$lang['lista.areas'] = "Listado de Áreas Registradas";
+$lang['agregar.area'] = "Agregar Nueva Área";
+$lang['area'] = "Área";
+$lang['registro.area'] = "Registro de Área realizado con éxito";
+$lang['dependencia.modificado'] = "Dependencia Modificada con éxito";
+$lang['area.modificado'] = "Dependencia Modificada con éxito";
+
+$lang['lista.medios'] = "Listado de Medios Registrados";
+$lang['agregar.medio'] = "Agregar Nuevo Medio";
+$lang['medio'] = "Medio";
+$lang['registrar.medios'] = "Registrar Medios";
+$lang['registro.medio'] = "Registro de Medio realizado con éxito";
+$lang['medio.modificado'] = "Medio Modificado con éxito";
+
+$lang['lista.temas'] = "Listado de Temas Registrados";
+$lang['agregar.tema'] = "Agregar Nuevo Tema";
+$lang['tema'] = "Tema";
+$lang['registro.tema'] = "Registro de Tema realizado con éxito";
+$lang['tema.modificada'] = "Tema Modificada con éxito";
+
+$lang['lista.notas'] = "Listado de Notas Registradas";
+$lang['agregar.nota'] = "Agregar Nueva Nota";
+$lang['modificar.nota'] = "Modificar Nota";
+$lang['nota'] = "Nota";
+$lang['registro.nota'] = "Registro de Nota realizado con éxito";
+$lang['nota.modificada'] = "Nota Modificada con éxito";
+$lang['tema.se'] = "Tema (En caso de no encontrar el tema registre en el campo Nuevo Tema)";
+$lang['tema'] = "Tema";
+$lang['area'] = "Area";
+$lang['tipo.noticia'] = 'Tipo Noticia';
+$lang['observacion'] = 'Observación';
+$lang['tendencia'] = 'Tendencia';
+$lang['subir.archivo'] = "Subir Archivo";
+$lang['imagen.subida'] = "Imagen Subida";
+$lang['label.imagen'] = "Adjuntar Archivo";
+$lang['ver.archivo'] = "Ver Archivo";
+$lang['detalle'] = "Detalle";
+$lang['otro.tema'] = "Registrar otro Tema";
+$lang['reporte.monitoreo'] = "Reporte Monitoreo Informativo";
+$lang['fecha.inicial'] = "Fecha Inicial";
+$lang['fecha'] = "Fecha";
+$lang['fecha.final'] = "Fecha Final";
+$lang['ver.nota'] = "Ver Nota";
+$lang['turno'] = "Turno";
+$lang['asignar.medio'] = "Asignar Medio";
+$lang['acciones'] = "Accciones";
+$lang['tema.vacio'] = "Tema esta vacio";
+$lang['notas.tematica'] = "Notas por Tematica";
+$lang['nuevo.tema'] = 'Nuevo Tema';
+$lang['nueva.dependecia'] = "Nueva Dependencia";
+$lang['dependencia.sel'] = "Dependencia (En caso de no encontrar la Dependencia registre en el campo Nueva Dependencia)";
+$lang['frecuencia.tematica'] = 'Porcentaje de Frecuencia por Temática';
+$lang['monitoreo.notas'] = "Monitoreo de Notas Muncipales";
+$lang['notas.alcalde'] = "Notas Alcalde";
+$lang['tematica.destacada'] = "Temáticas Destacadas";
+$lang['reporte.funcionario']  = "Reporte Funcionario";
+$lang['registro.medios.funcionario'] = "Gráfica de cantidad de Medios registrados por Funcionario";
+$lang['porcentaje.usuario'] = "Porcentaje de Medios por Funcionario";
+$lang['funcionario'] = "Seleccionar Funcionario";
+$lang['modificar.medio'] = "Modificar Medio";
+$lang['medio.modificado'] = "Medio Modificado con éxito";
+$lang['medio.vacio']   = "No puede enviar datos vacios al modificar Medio";
+
+$lang['fecha.inicio'] = "Fecha Inicio";
+$lang['fecha.fin']   = "Fecha Fin";
+
+$lang['dashboard'] = "Dashboard de Temas y Distribución de Notas";
+$lang['nombre.programa'] = "Nombre del Programa";
+$lang['interlocutor'] = "Interlocutor";
+$lang['motivo.espacio'] = "Motivo del Espacio";
+$lang['hora'] = "Hora";
+$lang['programa'] = "Programa";
+$lang['lugar'] = "Lugar";
+$lang['reporte.medio'] = "Reporte de Notas por Medio";
