@@ -27,7 +27,8 @@ date_default_timezone_set('America/La_Paz');
 /*$root = "http://".$_SERVER['HTTP_HOST'];
 $root .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
 $config['base_url']    = "$root";*/
-$config['base_url'] = 'https://monitoreo.cochabamba.bo';
+//$config['base_url'] = 'https://monitoreo.cochabamba.bo';
+$config['base_url'] = 'http://localhost:8080/monitoreo/';
 //$config['base_url'] = 'http://localhost/atencion-al-ciudadano';
 
 /*
