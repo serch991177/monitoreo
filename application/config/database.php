@@ -75,10 +75,16 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '192.168.104.136',
+	/*'hostname' => '192.168.104.136',
 	'username' => 'monitoreo_user',
 	'password' => 'monitoreo_pass',
 	'database' => 'monitoreo_db',
+	'dbdriver' => 'postgre',
+	'port'	   => '5432',*/
+	'hostname' => '127.0.0.1',
+	'username' => 'postgres',
+	'password' => 'temporal.1',
+	'database' => 'monitoreo',
 	'dbdriver' => 'postgre',
 	'port'	   => '5432',
 	'dbprefix' => '',
