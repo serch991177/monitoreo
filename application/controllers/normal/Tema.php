@@ -120,24 +120,31 @@ class Tema extends CI_Controller
             redirect('temas');
         }
     }
-    public function search_temas()
-  {
-    $json = [];
+    public function search_temas(){
+        $json = [];
 
-  	$this->load->database();
+        $this->load->database();
 
-  	if(!empty($this->input->get("q"))){
+        if(!empty($this->input->get("q"))){
 
-  			$cad=mb_strtoupper($this->input->get('q'),'UTF-8');
+                $cad=mb_strtoupper($this->input->get('q'),'UTF-8');
 
-  			$this->db->like('tema',  $cad);
-  			$query = $this->db->select('id_tema as id, tema as text')
+                $this->db->like('tema',  $cad);
+                $query = $this->db->select('id_tema as id, tema as text')
 
-  						->where('id_estado','1')
-  						->get("tema");
-  			$json = $query->result();
-  		}
+                            ->where('id_estado','1')
+                            ->get("tema");
+                $json = $query->result();
+            }
 
-    echo json_encode($json);
-  }
+        echo json_encode($json);
+    }
+  
+    public function actualizarEstadoTodos(){
+        $estado = $this->input->post('estado');
+        $nuevoEstado = ($estado === 'habilitar') ? 1 : 0;
+        $this->db->set('id_estado', $nuevoEstado);
+        $this->db->update('tema');
+        echo json_encode(['success' => true]);
+    }
 }

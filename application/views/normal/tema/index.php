@@ -13,7 +13,21 @@
             <div class="box-body">
                 <div class="row">
                     <div class="large-4 medium-8 small-12 large-offset-10 medium-offset-8 small-offset-6 columns">
-                        <button title="Registrar Tema" class="list-bt palette-Defecto bg button" onclick="nuevoTema()"; data-open="modalTema">Nuevo Tema<i class="las la-plus la-2x"></i></button>
+                        <button title="Registrar Tema" class="list-bt palette-Defecto bg button" onclick="nuevoTema();" data-open="modalTema">
+                            Nuevo Tema <i class="las la-plus la-2x"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-6 medium-6 small-12 columns">
+                        <button class="button success expanded" onclick="actualizarEstadoTemas('habilitar');">
+                            <i class="las la-check"></i> Habilitar Todos
+                        </button>
+                    </div>
+                    <div class="large-6 medium-6 small-12 columns">
+                        <button class="button alert expanded" onclick="actualizarEstadoTemas('deshabilitar');">
+                            <i class="las la-times"></i> Deshabilitar Todos
+                        </button>
                     </div>
                 </div>
                 <div class="row">
@@ -30,6 +44,7 @@
                         </table>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>
@@ -44,7 +59,7 @@
             <?= form_label(lang('tema'), 'tema'); ?>
             <div class="input-group">
                 <span class="input-group-label"><i class="las la-info-circle"></i></span>
-                <?= form_input('tema', set_value('tema'), ['class' => 'input-group-field ignore', 'id' => 'tema', 'onkeyup' => 'javascript:this.value=this.value.toUpperCase();', 'maxlength' => '110', 'required' => 'required']); ?>
+                <?= form_input('tema', set_value('tema'), ['class' => 'input-group-field ignore', 'id' => 'tema', 'oninput' => 'this.value=this.value.toUpperCase();', 'maxlength' => '110', 'required' => 'required']); ?>
             </div>
             <span class="form-error" data-form-error-for="tema">
                 <?= lang('campo.requerido') ?>
@@ -71,6 +86,47 @@
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+function actualizarEstadoTemas(accion) {
+    Swal.fire({
+        title: "Estas seguro de realizar esta accion?",
+        text: "No podras revertir esta accion!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Si"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                url: '<?= site_url("normal/tema/actualizarEstadoTodos") ?>',
+                type: 'POST',
+                data: { estado: accion },
+                dataType: 'json',
+                success: function(response) {
+                    if (response.success) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: accion === 'habilitar' ? '¡Temas habilitados!' : '¡Temas deshabilitados!',
+                            text: accion === 'habilitar' ? 'Todos los temas han sido habilitados correctamente.' : 'Todos los temas han sido deshabilitados correctamente.',
+                            confirmButtonText: 'OK'
+                        });
+                        setTimeout(() => {location.reload();}, 1500); 
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: '¡Error!',
+                            text: 'Hubo un problema al actualizar los temas.',
+                            confirmButtonText: 'OK'
+                        });
+                    }
+                }
+            });
+        }
+    });
+}
+</script>
 
 
 <?php $this->load->view('normal/tema/js/index') ?>
