@@ -85,7 +85,7 @@
             <?= form_label(lang('nueva.dependecia'), 'dependencia_nueva'); ?>
             <div class="input-group">
                 <span class="input-group-label"><i class="las la-info-circle"></i></span>
-                <?= form_input('dependencia_nueva', set_value('dependencia_nueva'), ['class' => 'input-group-field ignore', 'id' => 'dependencia_nueva', 'onkeyup' => 'javascript:this.value=this.value.toUpperCase();', 'maxlength' => '110']); ?>
+                <?= form_input('dependencia_nueva', set_value('dependencia_nueva'), ['class' => 'input-group-field ignore', 'id' => 'dependencia_nueva', 'oninput' => 'convertirMayusculas(this)', 'maxlength' => '110']); ?>
             </div>
         </div>
     </div>
@@ -110,7 +110,7 @@
             <?= form_label(lang('nuevo.tema'), 'tema_nue'); ?>
             <div class="input-group">
                 <span class="input-group-label"><i class="las la-info-circle"></i></span>
-                <?= form_input('tema_nue', set_value('tema_nue'), ['class' => 'input-group-field ignore', 'id' => 'tema_nue', 'onkeyup' => 'javascript:this.value=this.value.toUpperCase();', 'maxlength' => '110']); ?>
+                <?= form_input('tema_nue', set_value('tema_nue'), ['class' => 'input-group-field ignore', 'id' => 'tema_nue', 'oninput' => 'convertirMayusculas(this)', 'maxlength' => '110']); ?>
             </div>
         </div>
     </div>
@@ -151,8 +151,8 @@
 
                                 <td><?= form_dropdown('turno[1]', $turnos, set_value('turno[]'), ['class' => 'input-group-field req','onchange'=>'validar_blanco(this)']); ?></td>
 
-                                <td> <?= form_input('detalle_reg[1]', set_value('detalle_reg[]'), ['class' => 'input-group-field', 'onkeyup' => 'javascript:this.value=this.value.toUpperCase();', 'maxlength' => '60']); ?></td>
-                                <td> <?= form_input('acciones_reg[1]', set_value('acciones_reg[]'), ['class' => 'input-group-field', 'onkeyup' => 'javascript:this.value=this.value.toUpperCase();', 'maxlength' => '60']); ?></td>
+                                <td> <?= form_input('detalle_reg[1]', set_value('detalle_reg[]'), ['class' => 'input-group-field', 'oninput' => 'convertirMayusculas(this)', 'maxlength' => '60']); ?></td>
+                                <td> <?= form_input('acciones_reg[1]', set_value('acciones_reg[]'), ['class' => 'input-group-field', 'oninput' => 'convertirMayusculas(this)', 'maxlength' => '60']); ?></td>
 
 
 
@@ -453,6 +453,13 @@
     </button>
 </div>
 
-
+<script>
+    function convertirMayusculas(element) {
+        const start = element.selectionStart;
+        const end = element.selectionEnd;
+        element.value = element.value.toUpperCase();
+        element.setSelectionRange(start, end);
+    }
+</script>
 <?php $this->load->view('normal/nota/js/index') ?>
 <?php $this->load->view('general/layout/footer') ?>
